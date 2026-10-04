@@ -1,0 +1,110 @@
+:root {
+  --bg-color: #fff8f0;
+  --text-color: #212529;
+  --card-bg: #ffffff;
+  --navbar-bg: #dc3545;
+  --footer-bg: #212529;
+  --skeleton-base: #e9ecef;
+  --skeleton-shine: #f8f9fa;
+}
+
+[data-theme='dark'] {
+  --bg-color: #1a1a1a;
+  --text-color: #f1f1f1;
+  --card-bg: #2b2b2b;
+  --navbar-bg: #7a1f2b;
+  --footer-bg: #000000;
+  --skeleton-base: #3a3a3a;
+  --skeleton-shine: #4a4a4a;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.card {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+}
+
+.recipe-card {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  cursor: pointer;
+  animation: fadeInUp 0.35s ease both;
+}
+
+.recipe-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.recipe-img {
+  height: 200px;
+  object-fit: cover;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.hero-food {
+  background: linear-gradient(135deg, #ff7e5f, #feb47b);
+}
+
+/* Skeleton loading shimmer */
+.skeleton {
+  background: linear-gradient(90deg, var(--skeleton-base) 25%, var(--skeleton-shine) 50%, var(--skeleton-base) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.skeleton-img {
+  height: 200px;
+  width: 100%;
+  border-radius: 0;
+}
+
+.skeleton-line {
+  height: 14px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Recipe of the Day banner */
+.rotd-banner {
+  background: linear-gradient(135deg, #232526, #414345);
+  color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.rotd-banner img {
+  height: 220px;
+  object-fit: cover;
+  width: 100%;
+}
